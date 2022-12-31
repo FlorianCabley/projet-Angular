@@ -1,0 +1,43 @@
+<li [ngClass]="{ 'list-group-item': true,
+                  'list-group-item-info': jeuAvailable == true }">
+    <div class="row">
+        <div class="col-2">
+            <img class="affiche" [src]="jeuAffiche" alt="Image jeu">
+        </div>
+        <div class="col-8">
+            <div class="available" *ngIf="jeuAvailable == true">
+                <img src="https://t3.ftcdn.net/jpg/00/35/92/52/360_F_35925206_fel5wp6E0pgoE4cvkeW4hf5H9soqHW1m.jpg" alt="Disponible">
+            </div> 
+            <div class="available" *ngIf="jeuAvailable == false">
+                <img src="https://img.ecommercemag.fr/Img/FICHEPRATIQUE/2021/9/364999/commerce-comment-gerer-ruptures-stock--F.jpg" alt="Rupture de stock">
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3 [ngStyle]="{color: changeColor()}">Jeu: {{jeuName}}</h3>
+                </div>
+                <div class="col-12 col-sm-6">
+                    Date de sortie: <br> {{jeuReleaseDate}}<br> Pays: {{jeuCountry}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    Développeur(s): {{jeuDeveloper}}<br>
+                    Editeur(s): {{jeuEditor}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    Résumé:<br>
+                    <div class="text-justify">
+                        {{jeuSynopsis}}
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-success" (click)='onGameLaunch()'>Jouer</button>
+        </div>
+        <div class="col-2">
+            <a [routerLink]="['/modif', id]" class="btn btn-warning">M</a>
+            <button class="btn btn-danger" (click)="suppr()">X</button>
+        </div>
+    </div>   
+</li>

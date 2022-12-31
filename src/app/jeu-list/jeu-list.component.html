@@ -1,0 +1,14 @@
+<ul class="list-group">
+    <app-jeux-video *ngFor="let jeu of jeux; let i = index" 
+    [jeuName]="jeu.title" 
+    [jeuAvailable]="jeu.available" 
+    [jeuAffiche]="jeu.pictureLink" 
+    [jeuCountry]="jeu.country"
+    [jeuDeveloper]="jeu.developer"
+    [jeuEditor]="jeu.editor"
+    [jeuReleaseDate]="jeu.releaseDate"
+    [jeuSynopsis]="jeu.synopsis"
+    [index]="i"
+    [id]="jeu.id"></app-jeux-video>
+  </ul>
+  
